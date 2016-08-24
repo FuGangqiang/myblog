@@ -21,7 +21,9 @@
   <nav>
     <ul>
       <li><a href="/index.html">博文</a></li>
-      <li><a href="https://github.com/FuGangqiang/myblog/issues/new" target="_blank">留言</a></li>
+      <li><a href="/blog/posts/notes.html">笔记</a></li>
+      <li><a href="/blog/posts/docs.html">文档</a></li>
+     <li><a href="https://github.com/FuGangqiang/myblog/issues/new" target="_blank">留言</a></li>
     </ul>
   </nav>
 </header>
@@ -43,7 +45,6 @@
     <section class="links clearfix">
       <h1>链接</h1>
       <ul>
-	<li><a href="/blog/posts/notes.html">笔记</a></li>
 	<li><a href="http://github.com/FuGangqiang" target="_blank">Github</a></li>
       </ul>
     </section>
