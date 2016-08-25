@@ -7,12 +7,12 @@
       {{ content }}
 
       <ul id="article_footer">
-      	{% if post_tags %}
+        {% if post_tags %}
            <li>tags: {% for tag in post_tags %}<a href="{{ tag.url }}">{{ tag.name }}<sup>{{ tag.num }}</sup></a>{% endfor %}</li>
-	{% endif %}
-	{% if datetime %}
-	   <li>date: {{ datetime }}</li>
-	{% endif %}
+        {% endif %}
+        {% if datetime %}
+           <li>date: {{ datetime }}</li>
+        {% endif %}
       </ul>
     </article>
 {% endblock main %}
