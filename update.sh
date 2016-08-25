@@ -1,10 +1,10 @@
 #!/bin/bash
 
-DEST=$(pwd)
+DEST=$(pwd)/_builds
 
-rm $DEST/blog/*
-rm $DEST/media/*
-rm $DEST/static/*
+rm $DEST/blog/* -rf
+rm $DEST/media/* -rf
+rm $DEST/static/* -rf
 rm $DEST/index.html
 
 mdblog build
