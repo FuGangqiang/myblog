@@ -130,7 +130,7 @@ crontab 可以写成这样：
 
 如果你的 linux 使用 Systemd init 系统，你不仅可以用 crontab 来定时执行任务，
 也可以用 systemd 自身提供的 unit.timer，而且时间格式更随意，
-请参考博文 [systemd 中的时间格式](/blog/post/linux/systemd中的时间格式.html)，
+请参考博文 [systemd 中的时间格式](/blog/posts/linux/systemd中的时间格式.html)，
 其中主要讲解了 systemd 中的三种时间格式：Time Span、Timestamp、Calendar Event。
 
 每一个 unit.timer 都必须对应另一个 unit file，unit.timer 用来描述定时器，unit file 用来描述要运行的命令。

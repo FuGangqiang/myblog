@@ -1,5 +1,5 @@
 date: 2016-09-11 10:46:04
-tags: systemd
+tags: systemd, 容器
 
 
 作为一个 systemd 重度使用者，经常用 docker 容器进行一些本地测试或搭建一个开发环境，
@@ -128,7 +128,7 @@ systemd-analyze -M container_name
 ```
 
 
-## 开机自启动制定容器
+## 开机自启动指定容器
 
 
 ```
