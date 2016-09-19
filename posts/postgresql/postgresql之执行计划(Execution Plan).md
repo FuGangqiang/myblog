@@ -1,5 +1,5 @@
 date: 2016-09-18 17:42:59
-tags: postgresql
+tags: postgresql, 数据库
 
 
 ## 什么是执行计划(Execution Plan)？
