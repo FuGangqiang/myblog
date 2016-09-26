@@ -30,6 +30,21 @@ mkdir -p ~/Containers/arch
 pacstrap -c -d ~/Containers/arch base
 ```
 
+因为容器和宿主机可以共享 linux 内核，所以初始化容器文件夹可以忽略 linux 包：
+
+```
+# pacstrap -i -c -d ~/Containers/arch base --ignore linux
+==> Creating install root at arch
+==> Installing packages to arch
+:: Synchronizing package databases...
+ core                                        120.1 KiB   619K/s 00:00 [######################################] 100%
+ extra                                      1755.6 KiB  1600K/s 00:01 [######################################] 100%
+ community                                     3.6 MiB  2.90M/s 00:01 [######################################] 100%
+:: linux is in IgnorePkg/IgnoreGroup. Install anyway? [Y/n] n
+```
+
+其中 `-i` 选项避免自动确认。
+
 这样一个 Archlinux 容器就构建成功了，你可以通过 systemd-nspawn 命令开启容器：
 
 ```
@@ -51,6 +66,9 @@ machinectl 命令默认会到 `/var/lib/machines`、`/usr/local/lib/machines/` �
 ```
 mv ~/Containers/arch /var/lib/machines/arch
 ```
+
+因为 archlinux 中 pam_security 的控制，machinectl 命令是不能 root 登陆的，为了解决这个问题，需要在容器里修改文件
+`/etc/securetty`，添加 `pts/0`。
 
 这样我们就可以用 machinectl 来控制我们的 `arch` 容器了。
 
