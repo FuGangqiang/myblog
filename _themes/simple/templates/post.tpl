@@ -8,10 +8,10 @@
 
       <ul id="article_footer">
         {% if post_tags %}
-           <li>tags: {% for tag in post_tags %}<a href="{{ tag.url }}">{{ tag.name }}<sup>{{ tag.num }}</sup></a>{% endfor %}</li>
+           <li>标签： {% for tag in post_tags %}<a href="{{ tag.url }}">{{ tag.name }}<sup>{{ tag.num }}</sup></a>{% endfor %}</li>
         {% endif %}
         {% if datetime %}
-           <li>date: {{ datetime }}</li>
+           <li>日期： {{ datetime }}</li>
         {% endif %}
       </ul>
     </article>
