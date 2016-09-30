@@ -55,3 +55,6 @@ CDN(Content Delivery Network，内容分发网络)服务
 通过波分复用（WDM，Wavelength-Division Multiplexing）技术，
 光纤可以同时传输很多不同波长（信道）的光，因而具有明显的带宽优势。
 一条光纤连接的总带宽，等于每个信道的数据传输速率乘以可复用的信道数。
+
+
+注：本文为《web 性能权威指南》笔记
