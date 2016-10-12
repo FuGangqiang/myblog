@@ -160,7 +160,7 @@ driver.find_element_by_id("submit").click()
 
 或
 
-`python
+```python
 # 这里的element可以是form中任何一个元素
 element.submit()
 ```
