@@ -2,6 +2,8 @@ date: 2016-10-12 11:11:07
 tags: postgresql, 数据库, 性能
 
 
+转载自：[更高的并发：改进PostgreSQL锁机制](http://www.csdn.net/article/2015-11-07/2826143)<br>
+
 如果你想构建一个大规模的网站，单凭横向扩展 web 服务器是远远不够的。
 如何巧妙地管理数据库也是非常必要的。
 锁（locking）便是实现网站高扩展性的一个关键。
@@ -89,5 +91,4 @@ for update of account for share of currency
 这样大部分人可以同时查看相同的 currency 而无需相互锁定，同时又保证了 account 表的安全。
 
 
-转载自：[更高的并发：改进PostgreSQL锁机制](http://www.csdn.net/article/2015-11-07/2826143)<br>
 原文：[More Concurrency: Improved Locking In PostgreSQL](http://highscalability.com/blog/2015/10/13/more-concurrency-improved-locking-in-postgresql.html)
