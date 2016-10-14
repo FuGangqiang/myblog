@@ -116,4 +116,4 @@ mdbook build /path/to/book-test
 本博客最近打算用 `mdbook` 来整理以前记录的一些笔记文档，
 目前尚处于初始阶段，不过以后会逐步完善笔记的。
 
-笔记索引存放于 [http://fugangqiang.github.io/notes.html](http://fugangqiang.github.io/notes.html) 页面下。
+笔记索引存放于 [notes](http://fugangqiang.github.io/blog/posts/notes.html) 页面下。
