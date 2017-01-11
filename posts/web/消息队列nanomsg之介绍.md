@@ -1,5 +1,5 @@
 date: 2017-01-10 12:09:00
-tags: mq, nanomsg, web
+tags: web, nanomsg, 消息队列
 
 
 在众多消息队列中，最简单、灵活、快速的应该就是 `nanomsg` 吧，

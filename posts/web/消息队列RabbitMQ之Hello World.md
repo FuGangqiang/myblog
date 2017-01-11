@@ -1,5 +1,5 @@
 date: 2017-01-11 11:13:42
-tags: web, mq, rabbitmq
+tags: web, rabbitmq, 消息队列
 
 
 随着软件系统规模的不断增长、扩展，它会变得越来越复杂，
