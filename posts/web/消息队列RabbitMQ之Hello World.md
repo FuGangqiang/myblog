@@ -35,7 +35,7 @@ sudo systemctl start rabbitmq
 
 ### 生产者
 
-```
+```python
 import pika
 
 connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
@@ -52,7 +52,7 @@ connection.close()
 
 ### 消费者
 
-```
+```python
 import pika
 
 connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
