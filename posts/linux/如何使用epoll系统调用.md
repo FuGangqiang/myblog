@@ -78,6 +78,7 @@ create_and_bind(char *port)
 }
 ```
 
+
 通过 `make_socket_non_blocking` 函数来使 socket 非阻塞：
 
 ```c
@@ -100,6 +101,24 @@ make_socket_non_blocking(int sfd)
   }
 
   return 0;
+}
+```
+
+通过 `register_socket` 向 epoll instance 中添加要监控的文件描述符：
+
+```c
+static void
+register_socket(int efd, int sfd) {
+  int s;
+  struct epoll_event event;
+
+  event.data.fd = sfd;
+  event.events = EPOLLIN | EPOLLET;
+  s = epoll_ctl(efd, EPOLL_CTL_ADD, sfd, &event);
+  if(s == -1) {
+    perror("epoll_ctl");
+    abort();
+  }
 }
 ```
 
@@ -158,7 +177,6 @@ main(int argc, char *argv[])
 static void
 handle_listen_socket_event(int efd, struct epoll_event *event) {
   int s;
-  struct epoll_event e;
 
   while(1) {
     struct sockaddr in_addr;
@@ -189,13 +207,7 @@ handle_listen_socket_event(int efd, struct epoll_event *event) {
     if(s == -1)
       abort();
 
-    e.data.fd = infd;
-    e.events = EPOLLIN | EPOLLET;
-    s = epoll_ctl(efd, EPOLL_CTL_ADD, infd, &e);
-    if(s == -1) {
-      perror("epoll_ctl");
-      abort();
-    }
+    register_socket(efd, infd);
   }
 }
 
