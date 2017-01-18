@@ -250,4 +250,4 @@ handle_connect_socket_event(struct epoll_event *event) {
 ```
 
 
-示例程序完整版请见[epoll example](https://github.com/FuGangqiang/epoll_example/blob/master/example.c)。
+示例程序完整版请见[epoll example](https://github.com/FuGangqiang/example/tree/master/epoll)。

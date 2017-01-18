@@ -141,4 +141,4 @@ fn main() {
 示例代码中也引入了 `slab` crate 用来保存 token 和链接的一一对应关系，
 当然，你也可以用 hashmap 来建立索引，不过这个不是很高效。
 
-示例代码 repo 可以到[mio-example](https://github.com/FuGangqiang/mio-example)下载。
+示例代码 repo 可以到[mio-example](https://github.com/FuGangqiang/example/tree/master/mio)下载。
