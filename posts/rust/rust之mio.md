@@ -1,5 +1,5 @@
 date: 2017-01-18 20:55:38
-tags: rust, mio
+tags: rust, tokio, network
 
 
 随着 tokio 0.1 的发布，rust 语言的异步 io 库逐渐成熟，
@@ -17,7 +17,7 @@ tags: rust, mio
 [tokio-proto]: https://github.com/tokio-rs/tokio-proto
 [tokio-service]: https://github.com/tokio-rs/tokio-service
 
-本篇主要讲解 mio。
+本篇主要讲解 [mio][]。
 
 mio(Metal IO) 是 rust 语言中的异步 io crate，tokio 框架就是基于这个 crate 的。
 从源码上看 mio 基本就是对 linux epoll(bsd kqueue) 的简单包装，只是披了一层 rust 外衣，
@@ -131,7 +131,7 @@ fn main() {
 }
 ```
 
-我们从源码上面看，代码结果与 linux epoll 大致一样，
+我们从源码上面看，代码结构与 linux epoll 大致一样，
 有一个显著的不同就是 mio 用了 token(usize 类型) 来绑定 tcp 链接，
 这个应该主要是因为在 linux 系统中，每一个 socket 都是一个文件，对应一个文件描述符(usize 类型)，
 而 rust 语言标准库里并没有跨平台的文件描述符类型，
