@@ -64,7 +64,7 @@ tags: rust, tokio
 
 通过上面的特性我们可以很容易用 `futures` 来表达下面的执行流：
 
-```
+```rust
 id_rpc(&my_server).and_then(|id| {
     get_row(id)
 }).map(|row| {
@@ -74,7 +74,7 @@ id_rpc(&my_server).and_then(|id| {
 })
 ```
 
-这看起来很像同步代码，但是上面代码最终会被编译成一个状态机，来执行各种回调。
+这看起来很像同步代码，但是上面代码最终会被编译成一个状态机，根据当前的状态执行特定程序。
 
 
 ## futures-rs future 种类
@@ -97,7 +97,7 @@ id_rpc(&my_server).and_then(|id| {
 
 trait `Future` 的定义与标准库中的 `Iterator` 很相似：
 
-```
+```rust
 trait Future {
     // The type of value that the future yields on successful completion.
     type Item;
@@ -118,7 +118,7 @@ trait Future {
 
 `Stream` 和 `Sink` 也与 `Future` 类似：
 
-```
+```rust
 trait Stream {
     // The type of item yielded each time the stream's event occurs
     type Item;
