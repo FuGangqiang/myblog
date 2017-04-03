@@ -121,7 +121,7 @@ zh_CN.GBK GBK
 zh_CN.UTF-8 UTF-8
 zh_CN GB2312
 ```
-    
+
 运行：
 
 ```
@@ -196,7 +196,7 @@ HOOKS 行须添加 `usr fsck shutdown` 内容。
 运行：
 
 ```
-mkinitcpio -p linux 
+mkinitcpio -p linux
 ```
 
 
@@ -271,27 +271,6 @@ pacman -S ttf-dejavu wqy-zenhei wqy-microhei
 ```
 
 
-## 安装 slim
-
-```
-pacman -S slim
-systemctl enable slim
-```
-
-
-## 安装 awesome wm
-
-```
-pacman -S awesome
-```
-
-编辑 `~/.xinitrc`：
-
-```
-exec awesome
-```
-
-
 ## 安装 fcitx 输入法
 
 ```
@@ -316,15 +295,15 @@ pacman -S chromium
 
 ## 安装 pacaur
 
-配置 gnupg：
-
-```
-TODO
-```
-
 从 archlinux aur 网站下载 pacaur PKGBUILD，运行：
 
 ```
 makepkg
 pacman -U 生成的文件，以.xz结尾
+```
+
+`makepkg` 时会报 gpg 验证出错，需要运行：
+
+```
+gpg --recv-keys xxxxxxxxID
 ```
