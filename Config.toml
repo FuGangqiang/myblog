@@ -1,0 +1,5 @@
+theme = "simple"
+site_logo = "/static/img/logo.png"
+site_name = "Fu"
+site_motto = "Simple is Beautiful!"
+footer_note = "Keep It Simple, Stupid!"
