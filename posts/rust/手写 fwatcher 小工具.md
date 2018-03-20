@@ -99,13 +99,13 @@ use std::time::Duration;
 
 fn main() {
     let dirs =vec![PathBuf::from("src")];
-    let patterns = vec![Pattern::new("**/*.py").unwrap()];
-    let interval =  Duration::new(1, 0);
-    let restart = false;
     let cmd = vec!["pytest".to_string()];
 
-	// 上面是调用 Fwatcher 所需的参数，参数与命令行相应参数一一对应
-    let mut fwatcher = Fwatcher::new(dirs, patterns, interval, restart, cmd);
-    fwatcher.run();
+    let mut fwatcher = Fwatcher::new(dirs, cmd);
+    fwatcher.pattern(Pattern::new("**/*.py").unwrap())
+            .exclude_pattern(Pattern::new("**/.git/**").unwrap())
+            .interval(Duration::new(1, 0))
+            .restart(false)
+            .run();
 }
 ```
