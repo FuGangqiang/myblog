@@ -45,7 +45,7 @@
     <section class="links clearfix">
       <h1>链接</h1>
       <ul>
-        <li><a href="/index.html" target="_blank">Blog</a></li>
+        <li><a href="https://github.com/FuGangqiang" target="_blank">Github</a></li>
       </ul>
     </section>
   </aside>
