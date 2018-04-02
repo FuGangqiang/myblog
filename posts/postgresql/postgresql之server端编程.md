@@ -1,5 +1,5 @@
-date: 2016-09-19 16:32:12
-tags: postgresql, 数据库
+created: 2016-09-19T16:32:12+08:00
+tags: [postgresql, 数据库]
 
 
 ## 什么是 server 端编程？

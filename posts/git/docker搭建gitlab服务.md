@@ -1,5 +1,5 @@
-date: 2016-02-27 13:04:38
-tags: git, docker
+created: 2016-02-27T13:04:38+08:00
+tags: [git, docker]
 
 
 ## 安装 docker

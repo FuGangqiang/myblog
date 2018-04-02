@@ -1,5 +1,5 @@
-date: 2015-04-16 12:45:00
-tags: systemd
+created: 2015-04-16T12:45:00+08:00
+tags: [systemd]
 
 
 systemd 自身定义了三种时间格式：

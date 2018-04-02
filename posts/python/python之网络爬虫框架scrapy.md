@@ -1,5 +1,5 @@
-date: 2017-02-25 18:19:40
-tags: python, web, 爬虫
+created: 2017-02-25T18:19:40+08:00
+tags: [python, web, 爬虫]
 
 
 最近自己写了一个爬虫程序，用 scrapy 来爬取网上的几十万首诗词，

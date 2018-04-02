@@ -1,5 +1,5 @@
-date: 2015-03-30 17:26:00
-tags: python, network
+created: 2015-03-30T17:26:00+08:00
+tags: [python, network]
 
 
 TCP(Transmission Control Protocol，传输控制协议)是一种面向连接的、可靠的、基于字节流的通信协议，

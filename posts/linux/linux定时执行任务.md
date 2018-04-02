@@ -1,5 +1,5 @@
-date: 2015-04-17 12:11:00
-tags: systemd, 自动化
+created: 2015-04-17T12:11:00+08:00
+tags: [systemd, 自动化]
 
 
 linux 下有两种方式来实现定时执行任务：

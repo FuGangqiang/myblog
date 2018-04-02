@@ -1,5 +1,5 @@
-date: 2015-12-15 12:56:58
-tags: git
+created: 2015-12-15T12:56:58+08:00
+tags: [git]
 
 
 在 GitHub 上利用 Pull Request 功能，可以很方便地向其他项目贡献代码。本文简要介绍其操作流程。

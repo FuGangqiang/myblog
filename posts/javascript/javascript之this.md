@@ -1,5 +1,5 @@
-date: 2014-11-06 23:15:00
-tags: javascript
+created: 2014-11-06T23:15:00+08:00
+tags: [javascript]
 
 
 `this` 在 javascript 的面向对象编程模式中非常重要，

@@ -1,5 +1,5 @@
-date: 2017-02-10 16:09:15
-tags: python, aiohttp
+created: 2017-02-10T16:09:15+08:00
+tags: [python, aiohttp]
 
 随着 CPython3.6 的发布，asyncio(异步 io 标准库)的 API 正式稳定下来了，
 无疑利用 asyncio 写 web 应用将会极为方便。

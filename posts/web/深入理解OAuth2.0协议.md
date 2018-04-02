@@ -1,5 +1,5 @@
-date: 2015-08-17 18:04:00
-tags: OAuth, web, http
+created: 2015-08-17T18:04:00+08:00
+tags: [OAuth, web, http]
 
 
 注：本篇博客转载自：[http://blog.csdn.net/seccloud](http://blog.csdn.net/seccloud/article/details/8192707)
@@ -182,7 +182,7 @@ https://www.facebook.com/?access_token=ya29.AHES6ZSXVKYTW2VAGZtnMjD&token_type=B
 1. 浏览器的 redirect_uri 是一个不安全信道，此方式不适合于传递敏感数据（如 access_token）。
    因为 uri 可能通过 HTTP referrer 被传递给其它恶意站点，也可能存在于浏览器 cacher 或 log 文件中，这就给攻击者盗取 access_token 带来了很多机会。
    另外，此协议也不应该假设 RO 用户代理的行为是可信赖的，因为 RO 的浏览器可能早已被攻击者植入了跨站脚本用来监听 access_token。
-   因此，access_token 通过 RO 的用户代理传递给 Client，会显著扩大 access_token 被泄露的风险。 
+   因此，access_token 通过 RO 的用户代理传递给 Client，会显著扩大 access_token 被泄露的风险。
    但 authorization_code 可以通过 redirect_uri 方式来传递，是因为 authorization_code 并不像 access_token 一样敏感。
    即使 authorization_code 被泄露，攻击者也无法直接拿到 access_token，因为拿 authorization_code 去交换 access_token 是需要验证 Client 的真实身份。
    也就是说，除了 Client 之外，其他人拿 authorization_code 是没有用的。

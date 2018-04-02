@@ -1,5 +1,5 @@
-date: 2017-01-14 23:00:43
-tags: linux, network
+created: 2017-01-14T23:00:43+08:00
+tags: [linux, network]
 
 
 传统的网络服务器接收链接时通常 fork 一个进程或者 create 一个线程来处理这个链接，比如 Apache 服务器，

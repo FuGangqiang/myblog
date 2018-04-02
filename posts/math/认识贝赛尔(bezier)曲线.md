@@ -1,6 +1,5 @@
-date: 2014-02-16 20:51:00
-tags: asymptote, bezier, 数学
-math: true
+created: 2014-02-16T20:51:00+08:00
+tags: [asymptote, bezier, 数学]
 
 
 注：本文摘自网友 F.A.Zhang(cvgmt)的《Notes on asy》

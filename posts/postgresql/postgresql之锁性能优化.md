@@ -1,5 +1,5 @@
-date: 2016-10-12 11:11:07
-tags: postgresql, 数据库, 性能
+created: 2016-10-12T11:11:07+08:00
+tags: [postgresql, 数据库, 性能]
 
 
 转载自：[更高的并发：改进PostgreSQL锁机制](http://www.csdn.net/article/2015-11-07/2826143)<br>

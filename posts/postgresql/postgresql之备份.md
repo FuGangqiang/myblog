@@ -1,5 +1,5 @@
-date: 2016-10-15 16:51:19
-tags: postgresql, 数据库
+created: 2016-10-15T16:51:19+08:00
+tags: [postgresql, 数据库]
 
 
 postgresql 数据备份有三种方式：

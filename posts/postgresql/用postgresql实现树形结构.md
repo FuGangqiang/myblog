@@ -1,5 +1,5 @@
-date: 2016-09-27 18:15:39
-tags: postgresql, 数据库
+created: 2016-09-27T18:15:39+08:00
+tags: [postgresql, 数据库]
 
 
 关系型数据库对树形结构没有一个很好的解决方案，本文针对 postgresql 数据库，列出以下解决方案:

@@ -1,5 +1,5 @@
-date: 2015-07-26 20:57:00
-tags: python
+created: 2015-07-26T20:57:00+08:00
+tags: [python]
 
 
 注：本篇博客转载自：[http://hanjianwei.com/](http://hanjianwei.com/2013/07/25/python-mro/)

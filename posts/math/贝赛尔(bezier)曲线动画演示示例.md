@@ -1,5 +1,5 @@
-date: 2014-02-17 21:53:00
-tags: asymptote, bezier, 数学
+created: 2014-02-17T21:53:00+08:00
+tags: [asymptote, bezier, 数学]
 
 
 对贝赛尔曲线的认识只从静态图上看不是太好理解，看动画轨迹生成过程就很容易看出来了。

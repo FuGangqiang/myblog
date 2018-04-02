@@ -1,5 +1,5 @@
-date: 2015-03-29 12:46:00
-tags: python, network
+created: 2015-03-29T12:46:00+08:00
+tags: [python, network]
 
 
 UDP(User Datagram Protocol，用户数据报传输协议)位于 TCP/IP 协议的传输层，

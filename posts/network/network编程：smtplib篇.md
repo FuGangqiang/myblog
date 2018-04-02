@@ -1,5 +1,5 @@
-date: 2015-04-14 11:52:00
-tags: python, network
+created: 2015-04-14T11:52:00+08:00
+tags: [python, network]
 
 
 最近工作应用了自动发送邮件功能，使用到了 python smtplib 模块

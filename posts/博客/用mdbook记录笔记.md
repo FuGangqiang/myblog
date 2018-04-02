@@ -1,5 +1,5 @@
-date: 2015-08-15 12:03:00
-tags: markdown
+created: 2015-08-15T12:03:00+08:00
+tags: [markdown]
 
 
 ## mdbook

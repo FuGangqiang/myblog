@@ -1,5 +1,5 @@
-date: 2017-02-13 16:20:21
-tags: postgresql, 数据库
+created: 2017-02-13T16:20:21+08:00
+tags: [postgresql, 数据库]
 
 
 为了更好的学习 postgresql，从底层数据如何存储可以更直观的了解其原理。

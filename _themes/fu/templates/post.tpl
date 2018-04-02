@@ -1,17 +1,20 @@
 {% extends "base.tpl" %}
 
+{% block title %}
+<title>{{ post.title }}</title>
+{% endblock title %}
 
 {% block main %}
-    <h1>{{ title }}</h1>
+    <h1>{{ post.title }}</h1>
     <article>
-      {{ content }}
+      {{ post.content }}
 
       <ul id="article_footer">
         {% if post_tags %}
-           <li>标签： {% for tag in post_tags %}<a href="{{ tag.url }}">{{ tag.name }}<sup>{{ tag.num }}</sup></a>{% endfor %}</li>
+          <li>标签： {% for tag in post_tags %}<a href="{{ config.url_prefix  | urlencode }}{{ tag.url }}">{{ tag.name }}<sup>{{ tag.num }}</sup></a>{% endfor %}</li>
         {% endif %}
         {% if datetime %}
-           <li>日期： {{ datetime }}</li>
+          <li>日期： {{ post.headers.created | date(format="%Y-%m-%d %H:%M:%S") }}</li>
         {% endif %}
       </ul>
     </article>
@@ -23,6 +26,7 @@
 
 
 {% block js %}
+<script src="{{ config.url_prefix }}/static/main.js"></script>
 <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({

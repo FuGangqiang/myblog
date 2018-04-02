@@ -1,5 +1,5 @@
-date: 2015-01-17 20:21:00
-tags: linux, systemd
+created: 2015-01-17T20:21:00+08:00
+tags: [linux, systemd]
 
 
 现在已经有好多 Linux 发行版采用 systemd 作为它们的 init 系统了，

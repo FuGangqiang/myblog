@@ -1,5 +1,5 @@
-date: 2015-07-12 17:31:00
-tags: python
+created: 2015-07-12T17:31:00+08:00
+tags: [python]
 
 
 ## 什么是描述符(descriptor)？

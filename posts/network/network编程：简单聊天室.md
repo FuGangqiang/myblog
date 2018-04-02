@@ -1,5 +1,5 @@
-date: 2015-04-27 15:42:00
-tags: c, network
+created: 2015-04-27T15:42:00+08:00
+tags: [c, network]
 
 
 这里是一个用 C 语言写的一个简单聊天室 server 版本，

@@ -1,5 +1,5 @@
-date: 2016-09-08 22:34:20
-tags: spark
+created: 2016-09-08T22:34:20+08:00
+tags: [spark]
 
 
 统计 spark 安装目录里面的 `README.md` 所有单词出现的频率。

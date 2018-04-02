@@ -1,5 +1,5 @@
-date: 2015-04-15 12:04:00
-tags: python, web, 自动化
+created: 2015-04-15T12:04:00+08:00
+tags: [python, web, 自动化]
 
 
 最近在做一些自动化Web测试方面的任务，用的是python selenium，很是方便。

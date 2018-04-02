@@ -1,5 +1,5 @@
-date: 2014-10-08 18:08:00
-tags: http, web
+created: 2014-10-08T18:08:00+08:00
+tags: [http, web]
 
 这里记录了我在学习 Http:The Definitive Guide 时的一些笔记。
 

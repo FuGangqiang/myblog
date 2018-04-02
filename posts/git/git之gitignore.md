@@ -1,5 +1,5 @@
-date: 2015-12-30 12:54:03
-tags: git
+created: 2015-12-30T12:54:03+08:00
+tags: [git]
 
 
 * blank lines or lines starting with `#` are ignored

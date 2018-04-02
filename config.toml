@@ -1,0 +1,10 @@
+theme = "fu"
+site_name = "Fu"
+site_motto = "Simple is Beautiful!"
+footer_note = "博学之　审问之　慎思之　明辨之　笃行之"
+media_dir = "media"
+build_dir = "_build"
+theme_root_dir = "_themes"
+rebuild_interval = 2
+url_prefix = ""
+posts_per_page = 20

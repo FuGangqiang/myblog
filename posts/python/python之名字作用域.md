@@ -1,5 +1,5 @@
-date: 2015-07-19 00:10:00
-tags: python
+created: 2015-07-19T00:10:00+08:00
+tags: [python]
 
 
 python 程序充满了名字(name)，变量名、函数名、类名、模块名等等，

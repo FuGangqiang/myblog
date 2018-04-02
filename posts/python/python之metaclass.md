@@ -1,5 +1,5 @@
-date: 2015-08-05 15:08:00
-tags: python
+created: 2015-08-05T15:08:00+08:00
+tags: [python]
 
 
 ## 什么是metaclass

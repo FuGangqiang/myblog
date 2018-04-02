@@ -1,5 +1,5 @@
-date: 2014-09-29 10:50:00
-tags: python, matplotlib
+created: 2014-09-29T10:50:00+08:00
+tags: [python, matplotlib]
 
 
 代码如下：

@@ -1,5 +1,5 @@
-date: 2017-02-11 21:05:18
-tags: postgresql, 数据库
+created: 2017-02-11T21:05:18+08:00
+tags: [postgresql, 数据库]
 
 
 许多数据库用到了 MVCC(Multi Version Concurrency Control，多版本并发控制)技术，

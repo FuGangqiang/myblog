@@ -1,5 +1,5 @@
-date: 2016-01-14 12:54:47
-tags: git
+created: 2016-01-14T12:54:47+08:00
+tags: [git]
 
 
 * `--author=pattern`：仅列出某作者的提交

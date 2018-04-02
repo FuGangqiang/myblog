@@ -1,5 +1,5 @@
-date: 2017-01-18 20:55:38
-tags: rust, tokio, network
+created: 2017-01-18T20:55:38+08:00
+tags: [rust, tokio, network]
 
 
 随着 tokio 0.1 的发布，rust 语言的异步 io 库逐渐成熟，

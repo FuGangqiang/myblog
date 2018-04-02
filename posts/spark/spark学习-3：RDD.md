@@ -1,5 +1,5 @@
-date: 2016-09-10 10:36:48
-tags: spark
+created: 2016-09-10T10:36:48+08:00
+tags: [spark]
 
 
 Spark 最主要的抽象就是 RDD(resilient distributed dataset)弹性分布式数据集，
