@@ -3,61 +3,61 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="mdblog.rs">
-  <link rel="icon" href="{{ config.url_prefix }}/static/favicon.png">
-  <link rel="stylesheet" href="{{ config.url_prefix }}/static/main.css">
-  {% block css %}{% endblock css %}
-  {% block title %}{% endblock title %}
+  <link rel="icon" href="{{ config.site_url }}/static/favicon.png">
+  <link rel="stylesheet" href="{{ config.site_url }}/static/main.css">
+  {%- block css %}{% endblock css -%}
+  {%- block title %}{% endblock title -%}
 </head>
 <body>
 <header class="clearfix">
   <section id="imglogo">
-    <a href="{{ config.url_prefix }}/index.html" title="{{ config.site_name }}">
-    <img src="{{ config.url_prefix }}/static/logo.png"></a>
+    <a href="{{ config.site_url }}/index.html" title="{{ config.site_name }}">
+    <img src="{{ config.site_url }}/static/logo.png"></a>
   </section>
-
   <section id="textlogo">
     <h1 id="site-name">
-      <a href="{{ config.url_prefix }}/index.html" title="{{ config.site_name }}">{{ config.site_name }}</a>
+      <a href="{{ config.site_url }}/index.html" title="{{ config.site_name }}">{{ config.site_name }}</a>
     </h1>
     <h2 id="site-motto">{{ config.site_motto }}</h2>
   </section>
-
   <nav>
     <ul>
-      <li><a href="{{ config.url_prefix }}/index.html">博文</a></li>
-     <li><a href="https://github.com/FuGangqiang/myblog/issues/new" target="_blank">留言</a></li>
+      <li><a href="{{ config.site_url }}/index.html">博文</a></li>
+      <li><a href="https://github.com/FuGangqiang/myblog/issues/new" target="_blank">留言</a></li>
     </ul>
   </nav>
 </header>
 <div id="container" class="clearfix">
   <main>
-    {% block main %}{% endblock main %}
+  {% block main %}{% endblock main %}
   </main>
-
   <aside>
     <section class="tags clearfix">
       <h1>标签</h1>
       <ul>
-      {% for tag in all_tags %}
-        <li><a href="{{ config.url_prefix }}{{ tag.url  | urlencode }}">{{ tag.name }}<sup>{{ tag.num }}</sup></a></li>
-      {% endfor %}
+      {%- for tag in all_tags %}
+        <li><a href="{{ config.site_url }}{{ tag.url  | urlencode }}">{{ tag.name }}<sup>{{ tag.num }}</sup></a></li>
+      {%- endfor %}
       </ul>
     </section>
-
     <section class="links clearfix">
       <h1>链接</h1>
       <ul>
         <li><a href="https://github.com/FuGangqiang" target="_blank">Github</a></li>
       </ul>
     </section>
+    <div>
+      <a href="{{ config.site_url }}/rss.xml" target="_blank">
+        <img id="feed" src="{{ config.site_url }}/static/feed.png">
+      </a>
+    </div>
   </aside>
 </div>
-
 <footer>
   <p>
     {{ config.footer_note }}
   </p>
 </footer>
-{% block js %}{% endblock js %}
+{%- block js %}{% endblock js -%}
 </body>
 </html>
