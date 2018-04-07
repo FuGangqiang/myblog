@@ -1,5 +1,5 @@
 created: 2015-04-16T12:45:00+08:00
-tags: [systemd]
+tags: [linux, systemd]
 
 
 systemd 自身定义了三种时间格式：

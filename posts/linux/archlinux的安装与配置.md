@@ -1,5 +1,5 @@
 created: 2015-11-28T12:07:00+08:00
-tags: [archlinux]
+tags: [linux, archlinux]
 
 
 ## 制作 USB 安装盘

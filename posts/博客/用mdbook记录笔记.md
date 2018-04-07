@@ -109,11 +109,3 @@ mdbook build /path/to/book-test
         - [Syntax highlighting](format/theme/syntax-highlighting.md)
 - [Rust Library](lib/lib.md)
 ```
-
-
-## 博客相关
-
-本博客最近打算用 `mdbook` 来整理以前记录的一些笔记文档，
-目前尚处于初始阶段，不过以后会逐步完善笔记的。
-
-笔记索引存放于 [notes](http://fugangqiang.github.io/blog/posts/notes.html) 页面下。

@@ -47,7 +47,7 @@
       </ul>
     </section>
     <div>
-      <a href="{{ config.site_url }}/rss.xml" target="_blank">
+      <a href="{{ config.site_url }}/atom.xml" target="_blank">
         <img id="feed" src="{{ config.site_url }}/static/feed.png">
       </a>
     </div>
