@@ -105,22 +105,22 @@ tags: [blog]
 this is a new post!
 ```
 
-从上面可以看到，一片博客分为两部分：
+从上面可以看到，一篇博客分为两部分：
 
 * `header`：博客元信息，yaml 格式
 * `body`：博客 markdown 内容
 
 `header` 和 `body` 由第一个空行分割开，其中 `header` 有以下几个配置项：
 
-* `created`：必填项，用户博客索引页的排序
-* `tags`：选填项，用于分类博客，默认: `[]`
-* `hidden`：选填项，是否隐藏博客，默认：`false`
-* `description`：选填项，用于博客的概述，默认：body 的第一段或前 100 个字符
+* `created`：必填项，博客生成日期
+* `tags`：选填项，博客标签，默认: `[]`
+* `hidden`：选填项，博客是否隐藏，默认：`false`
+* `description`：选填项，博客概述，默认：body 的第一段或前 100 个字符
 
 ## 测试博客
 
 对刚才新创建的 `posts/another.md` 文件进行一些修改，
-就可以测试查看一下最终的博客产生页面，运行：
+就可以检测一下最终的博客产生页面，运行：
 
 ```
 mdblog serve
@@ -145,7 +145,7 @@ mdblog build
 ## 配置博客
 
 [mdblog.rs][] 提供了许多可供自定义配置的选项，
-可以通过 `config.toml` 文件查看都是有那些可配置项已经默认值：
+可以通过 `config.toml` 文件查看都是有哪些可配置项以及它们的默认值：
 
 ```
 site_url = ""
@@ -160,8 +160,8 @@ rebuild_interval = 2
 posts_per_page = 20
 ```
 
-其中 `media_dir`、`build_dir`、`theme_root_dir` 是指定目录路径的，
-可以利用 shell 环境变量来制定路径，比如：
+其中 `media_dir`、`build_dir`、`theme_root_dir` 是目录路径设置，
+可以利用 shell 环境变量来指定路径，比如：
 
 * `$HOME/blog/media`
 * `~/blog/build`
