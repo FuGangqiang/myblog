@@ -1,4 +1,4 @@
-created: 2017-01-19T21:58:59+08:00
+created: 2018-04-11T15:08:33+08:00
 tags: [rust, tokio, network]
 
 
@@ -6,18 +6,15 @@ tags: [rust, tokio, network]
 打算用几篇博客来描述一下 tokio 框架相关的基础 crate(当然，也是为了学习一下)：
 
 * [mio][]
-* [futures-rs][]
-* [tokio-core][]
-* [tokio-proto][]
-* [tokio-service][]
+* [futures][]
+* [tokio][]
 
 [mio]: https://github.com/carllerche/mio
-[futures-rs]: https://github.com/alexcrichton/futures-rs
-[tokio-core]: https://github.com/tokio-rs/tokio-core
-[tokio-proto]: https://github.com/tokio-rs/tokio-proto
-[tokio-service]: https://github.com/tokio-rs/tokio-service
+[futures]: https://github.com/alexcrichton/futures-rs
+[tokio]: https://github.com/tokio-rs/tokio
 
-本篇主要讲解 [futures-rs][]。
+
+本篇主要讲解 [futures][]。
 
 在许多编程语言都有 `futures`(类似于 `promise`、`delay`、`deferred`) 的概念，
 并在此基础上引入轻量级进程或协程的概念。

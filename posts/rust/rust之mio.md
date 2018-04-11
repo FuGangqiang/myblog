@@ -1,4 +1,4 @@
-created: 2017-01-18T20:55:38+08:00
+created: 2018-04-11T15:02:25+08:00
 tags: [rust, tokio, network]
 
 
@@ -6,20 +6,17 @@ tags: [rust, tokio, network]
 打算用几篇博客来描述一下 tokio 框架相关的基础 crate(当然，也是为了学习一下)：
 
 * [mio][]
-* [futures-rs][]
-* [tokio-core][]
-* [tokio-proto][]
-* [tokio-service][]
+* [futures][]
+* [tokio][]
 
 [mio]: https://github.com/carllerche/mio
-[futures-rs]: https://github.com/alexcrichton/futures-rs
-[tokio-core]: https://github.com/tokio-rs/tokio-core
-[tokio-proto]: https://github.com/tokio-rs/tokio-proto
-[tokio-service]: https://github.com/tokio-rs/tokio-service
+[futures]: https://github.com/alexcrichton/futures-rs
+[tokio]: https://github.com/tokio-rs/tokio
+
 
 本篇主要讲解 [mio][]。
 
-mio(Metal IO) 是 rust 语言中的异步 io crate，tokio 框架就是基于这个 crate 的。
+mio(Metal IO) 是 rust 语言中的异步 io 的基础 crate，tokio 框架就是基于这个 crate 的。
 从源码上看 mio 基本就是对 linux epoll(bsd kqueue) 的简单包装，只是披了一层 rust 外衣，
 性能与原生相同，接口调用方式与 linux epoll 极为相似，mio 本身实现了可以监控以下几种事件：
 
@@ -37,7 +34,7 @@ mio(Metal IO) 是 rust 语言中的异步 io crate，tokio 框架就是基于这
 * subprocess
 
 当然在看这篇文章之前，你需要了解 linux epoll 的知识，
-可以查看博文[如何使用epoll系统调用](/blog/posts/linux/如何使用epoll系统调用.html)，本文示例与 epoll 示例功能实现完全相同。
+可以查看博文[如何使用epoll系统调用](/posts/linux/如何使用epoll系统调用.html)，本文示例与 epoll 示例功能实现完全相同。
 
 我们可以通过以下示例来看一下 mio 的用法：
 
@@ -140,5 +137,3 @@ fn main() {
 
 示例代码中也引入了 `slab` crate 用来保存 token 和链接的一一对应关系，
 当然，你也可以用 hashmap 来建立索引，不过这个不是很高效。
-
-示例代码 repo 可以到[mio-example](https://github.com/FuGangqiang/example/tree/master/mio)下载。
