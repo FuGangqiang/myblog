@@ -2,11 +2,19 @@ created: 2014-06-24T13:21:13+08:00
 tags: [linux, CLI]
 
 
-# 解压 deb 和 rpm 包
 
-deb 包是 debian、ubuntu系列特有的格式，
-rpm 包是 redhat、fedora、centos 系列特有的格式，
-有时想要安装另一个系列的包，可以通过解压包直接拿来用即可。
+## 查看某个包中安装的文件列表 deb
+
+```
+dpkg -L pkg_name
+```
+
+
+## 查看系统中某个文件属于哪个包
+
+```
+dpkg -S /file/path
+```
 
 
 ## 解压 deb 包
