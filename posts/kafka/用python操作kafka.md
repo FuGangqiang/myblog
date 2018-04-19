@@ -86,3 +86,25 @@ python consumer.py
 ```
 python producer.py
 ```
+
+
+## kafka reblance
+
+当有多个 consumer 属于同一个消费者组时，kafka 会自动 reblance 的，
+所以不需要在程序中显式的设置 topic partition 的，
+所以 `consumer.py` 也可以这样写：
+
+```
+from kafka import KafkaConsumer, TopicPartition, OffsetAndMetadata
+
+
+consumer = KafkaConsumer('test',
+                         client_id='client1',
+                         group_id='test_group',
+                         bootstrap_servers='10.0.0.2:9092,10.0.0.3:9092,10.0.0.4:9092')
+
+for msg in consumer:
+    print(msg)
+```
+
+当运行多个 consumer 时，`client_id` 参数具有唯一性的，
