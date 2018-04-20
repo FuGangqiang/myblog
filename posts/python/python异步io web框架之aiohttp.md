@@ -93,7 +93,7 @@ backend
 │   ├── dev.txt
 │   └── prod.txt
 ├── tests/
-├── init／
+├── init/
 ├── deploy/
 ├── run.py
 └── README.md
