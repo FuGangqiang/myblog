@@ -44,7 +44,7 @@ wget http://mirrors.tuna.tsinghua.edu.cn/apache/kafka/1.1.0/kafka_2.12-1.1.0.tgz
 tar -xzvf kafka_2.12-1.1.0.tgz -C /opt
 ```
 
-## 创建 kafka 用户、组
+### 创建 kafka 用户、组
 
 ```
 groupadd kafka
@@ -85,7 +85,7 @@ group.initial.rebalance.delay.ms=0
 
 其中 `broker.id` 同 `zookeeper` 的 `myid` 类似，是集群中的唯一标识，在此设为 ip 地址尾数。
 
-## 配置 systemd service
+### 配置 systemd service
 
 文件 `/etc/systemd/system/kafka.service` 文件如下：
 
