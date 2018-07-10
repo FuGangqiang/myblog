@@ -5,16 +5,16 @@ tags: [linux, archlinux]
 ## 制作 USB 安装盘
 
 从 [Arch 官网](https://www.archlinux.org/download/)上下载 archlinux 安装 iso 格式镜像
-（文件名类似于 archlinux-2015.11.01-dual.iso）。
+（文件名类似于 archlinux-2015.11.01-dual.iso），当然也可以从国内镜像网站下载。
 
 ```
-wget http://mirrors.163.com/archlinux/iso/2015.11.01/archlinux-2015.11.01-dual.iso
+wget http://mirrors.ustc.edu.cn/archlinux/iso/2018.07.01/archlinux-2018.07.01-x86_64.iso
 ```
 
 校验 iso 文件：
 
 ```
-md5sum archlinux-2015.11.01-dual.iso
+md5sum archlinux-2018.07.01-x86_64.iso
 ```
 
 如果校验 md5 一致，可将 iso 镜像文件写入 usb 安装盘（设备名称为 /dev/sdx）中：
@@ -47,11 +47,10 @@ cgdisk /dev/sda
 
 * `/dev/sda1`: /boot EFI 分区，512M
 * `/dev/sda2`: swap 分区，两倍内存
-* `/dev/sda3`: / linux root 分区，20G
-* `/dev/sda4`: /usr linux default 分区，20G
-* `/dev/sda5`: /var linux default 分区，50G
-* `/dev/sda6`: /tmp linux default 分区，20G
-* `/dev/sda7`: /home linux home 分区，剩余大小
+* `/dev/sda3`: / linux root 分区，10G
+* `/dev/sda4`: /var linux default 分区，50G
+* `/dev/sda5`: /tmp linux default 分区，10G
+* `/dev/sda6`: /home linux home 分区，剩余大小
 
 格式化分区：
 
@@ -63,7 +62,6 @@ mkfs.ext4 /dev/sda3
 mkfs.ext4 /dev/sda4
 mkfs.ext4 /dev/sda5
 mkfs.ext4 /dev/sda6
-mkfs.ext4 /dev/sda7
 ```
 
 
@@ -71,12 +69,11 @@ mkfs.ext4 /dev/sda7
 
 ```
 mount /dev/sda3 /mnt    # 安装系统 root 分区
-mkdir -p /mnt/boot /mnt/usr /mnt/var /mnt/tmp /mnt/home
+mkdir -p /mnt/boot /mnt/var /mnt/tmp /mnt/home
 mount /dev/sda1 /mnt/boot
-mount /dev/sda4 /mnt/usr
-mount /dev/sda5 /mnt/var
-mount /dev/sda6 /mnt/tmp
-mount /dev/sda7 /mnt/home
+mount /dev/sda4 /mnt/var
+mount /dev/sda5 /mnt/tmp
+mount /dev/sda6 /mnt/home
 ```
 
 
@@ -144,6 +141,8 @@ KEYMAP=us
 FONT=Lat2-Terminus16
 ```
 
+其中字体文件可以到 `/usr/share/kbd/consolefonts/` 中查找。
+
 
 ## 设置时区
 
@@ -156,6 +155,7 @@ ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 ```
 timedatectl set-time "yyyy-MM-dd hh:mm:ss"
+hwclock -systohc
 ```
 
 
@@ -179,11 +179,8 @@ passwd
 添加 user 用户：
 
 ```
-useradd -G wheel user
+useradd -m -G wheel user
 passwd user
-chfn user
-mkdir -m 700 /home/user
-chown user:user /home/user
 ```
 
 
@@ -212,10 +209,16 @@ bootctl install
 title          Arch Linux
 linux          /vmlinuz-linux
 initrd         /initramfs-linux.img
-options        root=PARTUUID=xxxxxxxxxxxxx rw
+options        root=UUID=xxxxxxxxxxxxx rw
 ```
 
-`options root` 项对应系统 root 分区，其中 `PARTUUID` 可以由命令 `blkid` 获得。
+`options root` 项对应系统 root 分区，其中 `UUID` 可以通过查看文件 `/etc/fstab` 获取，也可以用以下命令获得：
+
+```
+ls -l /dev/disk/by-uuid
+或者
+lsblk -f
+```
 
 编辑 `/boot/loader/loader.conf`：
 
@@ -229,9 +232,15 @@ default arch
 
 ### 有线
 
+
 ```
-systemctl enable dhcpcd
+pacman -S networkmanager
+systemctl enable NetworkManager
+systemctl start NetworkManager
+nmtui
 ```
+
+图形界面可以安装 `network-manager-applet `。
 
 
 ## 退出安装系统并重启
@@ -295,14 +304,14 @@ pacman -S chromium
 
 ## 安装 pacaur
 
-从 archlinux aur 网站下载 pacaur PKGBUILD，运行：
+从 archlinux aur 网站下载 aumman PKGBUILD，运行：
 
 ```
 makepkg
 pacman -U 生成的文件，以.xz结尾
 ```
 
-`makepkg` 时会报 gpg 验证出错，需要运行：
+`makepkg` 有时会报 gpg 验证出错，需要运行：
 
 ```
 gpg --recv-keys xxxxxxxxID
