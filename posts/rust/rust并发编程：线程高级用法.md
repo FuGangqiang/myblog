@@ -108,3 +108,37 @@ fn main() {
 上面程序运行结果取决于哪个线程第一次调用 `INIT.call_once`，
 如果是 `handle1`，那么结果是 `1`，
 如果是 `handle2`，那么结果是 `2`。
+
+
+## 线程局部变量
+
+rust 中用 `thread_local` 宏来初始化线程局部变量，并在线程内部用该变量的 `with` 方法来获取该变量值：
+
+```rust
+use std::cell::RefCell;
+use std::thread;
+
+thread_local! {
+    static FOO: RefCell<u32> = RefCell::new(1);
+}
+
+fn main() {
+    FOO.with(|foo| {
+        assert_eq!(*foo.borrow(), 1);
+        *foo.borrow_mut() = 2;
+    });
+
+    // each thread starts out with the initial value of 1
+    thread::spawn(move|| {
+        FOO.with(|foo| {
+            assert_eq!(*foo.borrow(), 1);
+            *foo.borrow_mut() = 3;
+        });
+    });
+
+    // we retain our original value of 2 despite the child thread
+    FOO.with(|foo| {
+        assert_eq!(*foo.borrow(), 2);
+    });
+}
+```
