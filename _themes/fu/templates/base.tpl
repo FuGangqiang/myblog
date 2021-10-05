@@ -22,18 +22,17 @@
   </section>
   <nav>
     <ul>
-      <li><a href="{{ config.site_url }}/index.html">博文</a></li>
-      <li><a href="https://github.com/FuGangqiang/myblog/issues/new" target="_blank">留言</a></li>
+      <li><a href="{{ config.site_url }}/index.html">Blog</a></li>
     </ul>
   </nav>
 </header>
 <div id="container" class="clearfix">
   <main>
-  {% block main %}{% endblock main %}
+  {%- block main %}{% endblock main %}
   </main>
   <aside>
     <section class="tags clearfix">
-      <h1>标签</h1>
+      <h1>Tags</h1>
       <ul>
       {%- for tag in all_tags %}
         <li><a href="{{ config.site_url }}{{ tag.url  | urlencode }}">{{ tag.name }}<sup>{{ tag.num }}</sup></a></li>
@@ -41,9 +40,9 @@
       </ul>
     </section>
     <section class="links clearfix">
-      <h1>链接</h1>
+      <h1>Links</h1>
       <ul>
-        <li><a href="https://github.com/FuGangqiang" target="_blank">Github</a></li>
+        <li><a href="{{ config.site_url }}/index.html" target="_blank">Blog</a></li>
       </ul>
     </section>
     <div>

@@ -6,7 +6,7 @@
 
 {%- block css %}
   <style>
-    .katex { font-size: 1em !important; }
+    .katex      { font-size: 1em !important; }
   </style>
 {% endblock css -%}
 
@@ -16,9 +16,9 @@
       {{ post.content }}
       <ul id="article_footer">
       {%- if post_tags %}
-        <li>标签： {% for tag in post_tags %}<a href="{{ config.site_url }}{{ tag.url }}">{{ tag.name }}<sup>{{ tag.num }}</sup></a>{% endfor %}</li>
+        <li>tags: {% for tag in post_tags %}<a href="{{ config.site_url }}{{ tag.url }}">{{ tag.name }}<sup>{{ tag.num }}</sup></a>{% endfor %}</li>
       {% endif -%}
-        <li>日期： {{ post.headers.created | date(format="%Y-%m-%d %H:%M:%S") }}</li>
+        <li>date: {{ post.headers.created | date(format="%Y-%m-%d %H:%M:%S") }}</li>
       </ul>
     </article>
 {%- endblock main %}
