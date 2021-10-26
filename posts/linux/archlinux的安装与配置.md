@@ -20,7 +20,7 @@ md5sum archlinux-2018.07.01-x86_64.iso
 如果校验 md5 一致，可将 iso 镜像文件写入 usb 安装盘（设备名称为 /dev/sdx）中：
 
 ```
-dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx && sync
+dd if=/path/to/archlinux.iso of=/dev/sdx bs=4M && sync
 ```
 
 
@@ -48,9 +48,6 @@ cgdisk /dev/sda
 * `/dev/sda1`: /boot EFI 分区，512M
 * `/dev/sda2`: swap 分区，两倍内存
 * `/dev/sda3`: / linux root 分区，10G
-* `/dev/sda4`: /var linux default 分区，50G
-* `/dev/sda5`: /tmp linux default 分区，10G
-* `/dev/sda6`: /home linux home 分区，剩余大小
 
 格式化分区：
 
@@ -59,9 +56,6 @@ mkfs.vfat -F32 /dev/sda1
 mkswap /dev/sda2
 swapon /dev/sda2
 mkfs.ext4 /dev/sda3
-mkfs.ext4 /dev/sda4
-mkfs.ext4 /dev/sda5
-mkfs.ext4 /dev/sda6
 ```
 
 
@@ -71,11 +65,18 @@ mkfs.ext4 /dev/sda6
 mount /dev/sda3 /mnt    # 安装系统 root 分区
 mkdir -p /mnt/boot /mnt/var /mnt/tmp /mnt/home
 mount /dev/sda1 /mnt/boot
-mount /dev/sda4 /mnt/var
-mount /dev/sda5 /mnt/tmp
-mount /dev/sda6 /mnt/home
 ```
 
+## 连接网络
+
+iwctl 进入交互界面，用 iwctl 命令连接网络
+
+```
+device list
+station wlan0 scan
+station wlan0 get-networks
+station wlan0 connect SSID
+```
 
 ## 安装基础系统
 
@@ -88,7 +89,7 @@ pacman -Syy
 安装 `base` 和 `base-devel`：
 
 ```
-pacstrap /mnt base base-devel
+pacstrap /mnt base base-devel linux linux-firmware
 ```
 
 
@@ -103,7 +104,7 @@ cat /mnt/etc/fstab
 ## 切换到新安装系统
 
 ```
-arch-chroot /mnt /bin/bash
+arch-chroot /mnt
 ```
 
 

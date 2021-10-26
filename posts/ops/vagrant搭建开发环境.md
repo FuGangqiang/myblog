@@ -37,6 +37,7 @@ tags: [ops, vagrant]
     chmod 600 /home/vagrant/.ssh/authorized_keys
     chown -R vagrant:vagrant /home/vagrant
     ```
+* visudo 修改 `vagrant ALL=(ALL:ALL) NOPASSWD:ALL`
 * debian 基础包安装 `apt install ...`
     - sudo
     - gcc
@@ -45,18 +46,23 @@ tags: [ops, vagrant]
     - openssh-client
     - openssh-server
     - linux-headers-amd64
-* centos 基础包安装 `yum install ...`
+* centos 基础包安装 `dnf install ...`
     - gcc
     - make
+    - patch
+    - tar
     - bzip2
-    - openssh-server
+    - kernel-headers
     - kernel-devel
+    - openssh-server
+* 更新系统 `dnf update`
+* 进行下一步前重启系统(应该是加载kernel相关库)
 * 安装 virtualbox guest additions（有可能需要重启）
     - 选择虚拟机菜单 `Devices` -> `Insert Guest Additons CD image...`
     - 挂载 cdrom `mount /dev/cdrom /mnt`
     - 进入 cdrom 目录 `cd /mnt`
     - 安装 virtualbox guest additions `./VBoxLinuxAdditions.run`
-* visudo 修改 `vagrant ALL=(ALL:ALL) NOPASSWD:ALL`
+* 清理系统 `dnf clean all`
 
 
 ## 导出 box
