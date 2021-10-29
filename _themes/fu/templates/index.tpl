@@ -25,11 +25,13 @@
 
   <div id="pages">
   {%- if page.index > 1 %}
-    <span class="prev"><a href="{{ index_pages | nth(n=page.index - 2) | get(key='name') | urlencode }}">« 上页</a></span>
+    <a class="prev" href="{{ index_pages | nth(n=page.index - 2) | get(key='name') | urlencode }}">« 上页</a>
   {%- endif -%}
+    <span class="spacer"></span>
     <span class="info">{{ page.index }} / {{ index_pages | length }}</span>
+    <span class="spacer"></span>
   {%- if page.index < index_pages | length %}
-    <span class="next"><a href="{{ index_pages | nth(n=page.index) | get(key='name') | urlencode }}">下页 »</a></span>
+    <a class="next" href="{{ index_pages | nth(n=page.index) | get(key='name') | urlencode }}">下页 »</a>
   {% endif -%}
   </div>
 {%- endblock main %}
