@@ -1,5 +1,5 @@
 created: 2015-06-06T19:19:00+08:00
-tags: [linux, archlinux, package]
+tags: [linux, archlinux]
 
 
 我们知道，Linux 有许多发行版，

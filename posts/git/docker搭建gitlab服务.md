@@ -1,5 +1,5 @@
 created: 2016-02-27T13:04:38+08:00
-tags: [git, docker]
+tags: [git]
 
 
 ## 安装 docker
